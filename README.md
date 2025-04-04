@@ -35,3 +35,7 @@ auth-system/
 - JWT Auth
 - Type-safe
 - Tailwind UI
+
+## Author
+- Jignesh Zala
+- https://www.jigsdev.xyz/
