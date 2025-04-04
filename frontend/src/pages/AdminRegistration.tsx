@@ -2,11 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router'
 
-interface AdminRegistrationProps {
-  // Add any props if needed
-}
-
-const AdminRegistration: React.FC<AdminRegistrationProps> = () => {
+const AdminRegistration: React.FC= () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,7 +13,7 @@ const AdminRegistration: React.FC<AdminRegistrationProps> = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/admin-registration', { // Adjust the URL
+      const response = await fetch('http://localhost:5000/admin-registration', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +24,7 @@ const AdminRegistration: React.FC<AdminRegistrationProps> = () => {
       const data = await response.json();
       setData(data)
 
-      //Clear the forms
+      //Clear forms
       setFirstName("");
       setLastName("");
       setEmail("");

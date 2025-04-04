@@ -13,7 +13,7 @@ const AdminLogin: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/admin-login', { // Replace with your actual API endpoint
+      const response = await fetch('http://localhost:5000/admin-login', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

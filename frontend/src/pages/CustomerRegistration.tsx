@@ -1,11 +1,7 @@
 // CustomerRegistration.tsx
 import React, { useState } from 'react';
 
-interface CustomerRegistrationProps {
-  // Add any props if needed
-}
-
-const CustomerRegistration: React.FC<CustomerRegistrationProps> = () => {
+const CustomerRegistration: React.FC = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -15,7 +11,7 @@ const CustomerRegistration: React.FC<CustomerRegistrationProps> = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/customer-registration', { // Adjust the URL
+      const response = await fetch('http://localhost:5000/customer-registration', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -24,9 +20,9 @@ const CustomerRegistration: React.FC<CustomerRegistrationProps> = () => {
       });
 
       const data = await response.json();
-      console.log(data.message); // Log the response from the server
+      console.log(data.message); 
 
-      //Clear the forms
+      //Clear forms
       setFirstName("");
       setLastName("");
       setEmail("");
