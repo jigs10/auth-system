@@ -11,17 +11,17 @@ Auth system built with React (Vite + TypeScript), Tailwind CSS, Node.js (Express
 ## 🚀 Setup
 
 ### Backend
-cd ./backend
-npm install
-# .env with: USER_NAME, DATABASE, PSWD, DB_PORT, JWT_SECRET
-npm run dev
+- cd ./backend
+- npm install
+- .env with: USER_NAME, DATABASE, PSWD, DB_PORT, JWT_SECRET
+- npm run dev
 
 
 ### Frontend
 
-cd ./frontend
-npm install
-npm run dev
+- cd ./frontend
+- npm install
+- npm run dev
 
 
 ## 📁 Structure
