@@ -5,31 +5,30 @@ Auth system built with React (Vite + TypeScript), Tailwind CSS, Node.js (Express
 ## 🔧 Stack
 - React + Vite + TS
 - Tailwind CSS
-- Node.js + Express + TS
+- Node.js + Express
 - PostgreSQL
 
 ## 🚀 Setup
 
 ### Backend
-cd server
+cd ./backend
 npm install
-# .env with: PORT, DATABASE_URL, JWT_SECRET
+# .env with: USER_NAME, DATABASE, PSWD, DB_PORT, JWT_SECRET
 npm run dev
 
 
 ### Frontend
 
-cd client
+cd ./frontend
 npm install
-# .env with: VITE_API_URL
 npm run dev
 
 
 ## 📁 Structure
 
 auth-system/
-├── Frontend/ 
-└── Backend/ 
+├── frontend/ 
+└── backend/ 
 
 
 ## ✅ Features
