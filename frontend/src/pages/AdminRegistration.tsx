@@ -1,5 +1,6 @@
 // AdminRegistration.tsx
 import React, { useState } from 'react';
+import { Link } from 'react-router'
 
 interface AdminRegistrationProps {
   // Add any props if needed
@@ -10,6 +11,7 @@ const AdminRegistration: React.FC<AdminRegistrationProps> = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [data, setData] = useState(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,11 +22,11 @@ const AdminRegistration: React.FC<AdminRegistrationProps> = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ firstName, lastName, email, password, type: 1 }),
+        body: JSON.stringify({ firstName, lastName, email, password }),
       });
 
       const data = await response.json();
-      console.log(data.message); // Log the response from the server
+      setData(data)
 
       //Clear the forms
       setFirstName("");
@@ -37,10 +39,12 @@ const AdminRegistration: React.FC<AdminRegistrationProps> = () => {
     }
   };
 
+  console.log(data)
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+      {data && <span className='p-4 font-400 text-green-400'>{data?.message}</span>}
         <h2 className="text-2xl font-semibold mb-6 text-center">Admin Registration</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -92,6 +96,8 @@ const AdminRegistration: React.FC<AdminRegistrationProps> = () => {
             </button>
           </div>
         </form>
+        <div className='py-5'>Already user? <Link to="/admin-login" className="hover:underline text-blue-400 p-2">Admin Login</Link></div>
+        
       </div>
     </div>
   );
